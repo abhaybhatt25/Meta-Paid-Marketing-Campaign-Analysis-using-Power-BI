@@ -3,194 +3,230 @@
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
 ![DAX](https://img.shields.io/badge/DAX-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
 ![Meta](https://img.shields.io/badge/Meta_Ads-0668E1?style=for-the-badge&logo=meta&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
+
+**Keywords:** Power BI | DAX | Meta Ads API | Business Intelligence | Data Visualization | ROI Optimization | Marketing Analytics | Ad Performance | Data Modeling
+
+---
 
 ## 📌 Project Overview
 
-Interactive Power BI dashboard analyzing Meta advertising performance across campaigns, audiences, and channels. Built with advanced DAX measures for ROI tracking, CAC metrics, and dynamic time-intelligence to deliver actionable insights for optimizing ad spend and campaign effectiveness.
+End-to-end **interactive Power BI dashboard** analyzing Meta (Facebook/Instagram) advertising performance across campaigns, audiences, and channels. Built with **advanced DAX measures** for ROI tracking, CAC metrics, and dynamic time-intelligence. Designed to deliver **actionable insights for real-time decision-making** and budget optimization.
+
+**Use Case:** Marketing teams, BI analysts, and performance marketers seeking to understand ad spend efficiency, audience performance, and campaign ROI through interactive, drill-through dashboards.
+
+---
 
 ## ✨ Key Features
 
-- **🎯 Campaign Performance Tracking**: Real-time monitoring of campaign metrics across multiple ad accounts
-- **💰 ROI & Budget Analysis**: Comprehensive ROAS (Return on Ad Spend), CPA (Cost Per Acquisition), and budget utilization metrics
-- **👥 Audience Insights**: Deep-dive analysis by demographics, interests, and behavioral segments
-- **📈 Trend Analysis**: Time-series visualizations with YoY, MoM, and custom date range comparisons
-- **🔍 Drill-Through Capabilities**: Interactive drill-down from campaign level to ad-set and creative performance
-- **📊 Performance Benchmarking**: Industry benchmarks and competitor comparison metrics
+- 🎯 **Campaign Performance Tracking** – Real-time monitoring of campaign metrics across multiple ad accounts with drill-down from campaign → ad set → creative level
+- 💰 **ROI & Budget Analysis** – Comprehensive ROAS (Return on Ad Spend), CPA (Cost Per Acquisition), and budget utilization metrics with variance analysis
+- 👥 **Audience Insights** – Deep-dive analysis by demographics (age, gender, location), interests, behavioral segments, and device/platform performance
+- 📈 **Trend Analysis** – Time-series visualizations with YoY, MoM, and custom date range comparisons for seasonal and performance trends
+- 🔍 **Drill-Through Capabilities** – Interactive drill-down from campaign level to ad-set and creative performance with cross-filtering
+- 📊 **Performance Benchmarking** – Industry benchmarks and competitor comparison metrics to contextualize campaign performance
+- ⚡ **Dynamic Slicing** – Filter by date range, campaign status, audience segment, placement type (Feed, Stories, Reels), and cost metrics
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Business Intelligence**: Microsoft Power BI Desktop
-- **Data Modeling**: Power Query (M Language), DAX (Data Analysis Expressions)
-- **Data Source**: Meta Business Suite API, Excel/CSV exports
-- **Database**: SQL Server (optional for data warehousing)
-- **Version Control**: Git/GitHub
+| Component | Technology |
+|-----------|-------------|
+| **BI Tool** | Microsoft Power BI Desktop |
+| **Data Transformation** | Power Query (M Language), DAX (Data Analysis Expressions) |
+| **Data Sources** | Meta Business Suite API, Excel/CSV exports |
+| **Database** | SQL Server (optional for data warehousing) |
+| **Version Control** | Git/GitHub |
+| **DAX Functions** | CALCULATE, FILTER, SUMX, DIVIDE, TIME INTELLIGENCE |
+
+---
 
 ## 📂 Dashboard Sections
 
 ### 1️⃣ Executive Summary
-- Total ad spend, impressions, clicks, conversions
-- Overall ROAS and CAC
-- Top performing campaigns at a glance
-- Budget vs. actual spend variance
+High-level KPIs and metrics:
+- **Total ad spend, impressions, clicks, conversions** – campaign-level aggregates
+- **Overall ROAS and CAC** – efficiency metrics
+- **Top performing campaigns** – quick view of best performers
+- **Budget vs. actual spend variance** – cost control indicator
+- **Trend cards** – week-over-week, month-over-month changes
 
 ### 2️⃣ Campaign Deep-Dive
-- Campaign-level performance metrics
-- Ad-set breakdown with filtering capabilities
-- Creative performance comparison
-- Placement analysis (Feed, Stories, Reels, etc.)
+Granular campaign performance:
+- Campaign-level metrics with custom KPI indicators
+- Ad-set breakdown with dynamic filtering
+- Creative performance comparison (by audience, placement, cost)
+- Placement analysis (Feed, Stories, Reels, Instant Articles)
+- Budget tracking and spend forecasting
 
 ### 3️⃣ Audience Analysis
-- Demographic breakdown (Age, Gender, Location)
-- Interest-based segmentation
-- Device and platform performance
-- Audience overlap and saturation metrics
+Demographic and behavioral insights:
+- Age, gender, and location breakdowns
+- Interest-based segmentation with performance metrics
+- Device and platform performance (Mobile, Desktop, Tablet)
+- Connection type analysis (WiFi vs. Cellular)
+- Audience overlap and redundancy detection
 
-### 4️⃣ Conversion Funnel
-- Full-funnel visualization from impressions to conversions
-- Drop-off analysis at each stage
-- Cost per stage metrics
-- Conversion rate optimization insights
-
-### 5️⃣ Time-Series Analysis
-- Daily, weekly, monthly trend visualization
-- Seasonality patterns
-- Day-of-week and hour-of-day performance
+### 4️⃣ Trend Analysis & Forecasting
+Temporal performance patterns:
+- YoY and MoM comparisons with variance indicators
+- Seasonal trends and anomaly detection
+- Daily performance calendar heatmaps
 - Custom date range comparisons
+- Spend vs. conversion trend lines
 
-## 📊 Key Metrics & KPIs
-
-| Metric | Description | Formula/Calculation |
-|--------|-------------|--------------------|
-| **ROAS** | Return on Ad Spend | Revenue / Ad Spend |
-| **CPA** | Cost Per Acquisition | Ad Spend / Conversions |
-| **CTR** | Click-Through Rate | (Clicks / Impressions) * 100 |
-| **CPM** | Cost Per Mille (1000 impressions) | (Ad Spend / Impressions) * 1000 |
-| **CPC** | Cost Per Click | Ad Spend / Clicks |
-| **CVR** | Conversion Rate | (Conversions / Clicks) * 100 |
-| **Frequency** | Average impressions per user | Impressions / Reach |
-| **Engagement Rate** | Post engagement percentage | (Engagements / Impressions) * 100 |
-
-## 💻 DAX Measures (Sample)
-
-```dax
-// Total ROAS
-ROAS = 
-DIVIDE(
-    SUM(Campaigns[Revenue]),
-    SUM(Campaigns[AdSpend]),
-    0
-)
-
-// Cost Per Acquisition
-CPA = 
-DIVIDE(
-    SUM(Campaigns[AdSpend]),
-    SUM(Campaigns[Conversions]),
-    0
-)
-
-// Month-over-Month Growth
-MoM Growth % = 
-VAR CurrentMonth = SUM(Campaigns[Revenue])
-VAR PreviousMonth = 
-    CALCULATE(
-        SUM(Campaigns[Revenue]),
-        DATEADD(Campaigns[Date], -1, MONTH)
-    )
-RETURN
-    DIVIDE(
-        CurrentMonth - PreviousMonth,
-        PreviousMonth,
-        0
-    )
-
-// Campaign Performance Score
-Campaign Score = 
-VAR ROASScore = DIVIDE([ROAS], 3, 0) * 0.4
-VAR CTRScore = DIVIDE([CTR], 2, 0) * 0.3
-VAR CVRScore = DIVIDE([CVR], 5, 0) * 0.3
-RETURN
-    (ROASScore + CTRScore + CVRScore) * 100
-```
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Microsoft Power BI Desktop (latest version)
-- Meta Business Manager access with appropriate permissions
-- Basic understanding of DAX and Power Query
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/abhaybhatt25/Meta-Paid-Marketing-Campaign-Analysis-using-Power-BI.git
-   ```
-
-2. **Open Power BI file**
-   - Navigate to the project folder
-   - Open `Meta_Campaign_Analysis.pbix` with Power BI Desktop
-
-3. **Connect to data source**
-   - Update data source connections in Power Query
-   - Enter your Meta Business Suite API credentials
-   - Refresh data to load latest campaign information
-
-4. **Customize as needed**
-   - Modify DAX measures based on your KPIs
-   - Adjust visualizations to match your reporting needs
-   - Configure refresh schedules if publishing to Power BI Service
-
-## 📊 Data Model
-
-```
-Fact_Campaigns (Fact Table)
-|
-|-- DimDate (Date Dimension)
-|-- DimCampaign (Campaign Master)
-|-- DimAdSet (Ad Set Details)
-|-- DimCreative (Creative Assets)
-|-- DimAudience (Target Audience)
-|-- DimPlacement (Ad Placements)
-```
-
-## 📈 Business Impact
-
-- **20-30% improvement** in campaign ROI through data-driven optimization
-- **Reduced CAC** by identifying underperforming segments
-- **Faster decision-making** with real-time performance monitoring
-- **Enhanced budget allocation** across campaigns and channels
-- **Improved stakeholder communication** with executive-ready dashboards
-
-## 📄 Documentation
-
-- **Data Dictionary**: Detailed field descriptions available in `/docs/data_dictionary.md`
-- **DAX Formulas**: Complete DAX measure library in `/docs/dax_measures.md`
-- **User Guide**: Step-by-step dashboard usage guide in `/docs/user_guide.md`
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-- Submit bug reports or feature requests via Issues
-- Fork the repository and submit Pull Requests
-- Share feedback or suggestions for improvement
-
-## 📝 License
-
-This project is open source and available for educational and portfolio purposes.
-
-## 📞 Contact
-
-**Abhay Bhatt**  
-Business Analyst | PL-300 Certified | Power BI & Data Analytics Specialist
-
-- 💼 [LinkedIn](https://linkedin.com/in/abhay-bhatt-business-analyst)
-- 📧 Email: abhaybhatt25@outlook.com
-- 🌐 [GitHub Profile](https://github.com/abhaybhatt25)
+### 5️⃣ ROI Optimization
+Cost efficiency and budget allocation:
+- ROAS by campaign, audience, and placement
+- CAC (Cost Per Acquisition) analysis with benchmarking
+- Budget allocation recommendations
+- Top performers vs. bottom performers
+- Cost per result by campaign objective
 
 ---
 
-⭐️ **If you find this project helpful, please consider starring the repository!**
+## 📊 DAX Measures & Formulas
 
-#PowerBI #DataAnalytics #MetaAds #MarketingAnalytics #BusinessIntelligence #DAX
+### Core Metrics
+```dax
+-- ROAS (Return on Ad Spend)
+ROAS = DIVIDE([Total_Revenue], [Total_AdSpend], 0)
+
+-- CAC (Cost Per Acquisition)
+CAC = DIVIDE([Total_AdSpend], [Total_Conversions], 0)
+
+-- CTR (Click-Through Rate)
+CTR = DIVIDE([Total_Clicks], [Total_Impressions], 0)
+
+-- CPC (Cost Per Click)
+CPC = DIVIDE([Total_AdSpend], [Total_Clicks], 0)
+
+-- Conversion Rate
+ConversionRate = DIVIDE([Total_Conversions], [Total_Clicks], 0)
+
+-- YoY Growth
+YoYGrowth = DIVIDE(
+    [Current_Year_Metric] - [Prior_Year_Metric],
+    [Prior_Year_Metric],
+    0
+)
+```
+
+### Time Intelligence
+```dax
+-- MTD (Month-to-Date) Spend
+MTD_Spend = CALCULATE(
+    [Total_AdSpend],
+    DATESMTD(Calendar[Date])
+)
+
+-- Previous Month Comparison
+Prior_Month_Spend = CALCULATE(
+    [Total_AdSpend],
+    DATEADD(DATESMTD(Calendar[Date]), -1, MONTH)
+)
+```
+
+---
+
+## 🚀 How to Use
+
+1. **Connect Data Source**
+   - Export Meta Ads Manager data (CSV) or connect via Meta Business Suite API
+   - Load data into Power BI using Power Query
+
+2. **Load the Dashboard**
+   - Open the `.pbix` file in Power BI Desktop
+   - Refresh the data connection to pull latest metrics
+
+3. **Explore & Filter**
+   - Use date range slicers for custom periods
+   - Filter by campaign, audience segment, or placement type
+   - Hover over visuals for detailed tooltips
+
+4. **Drill-Through**
+   - Right-click on campaign cards to drill to ad-set level
+   - Explore creative-level performance
+
+5. **Export Reports**
+   - Use "Export to PowerPoint" for stakeholder presentations
+   - Publish to Power BI Service for real-time sharing
+
+---
+
+## 📈 Business Impact
+
+**Results Delivered:**
+- ✅ **Real-time visibility** into campaign performance, reducing reporting time from manual updates to instant refresh
+- ✅ **ROAS tracking** enabling data-driven budget reallocation across campaigns
+- ✅ **Audience insights** identifying highest-performing segments for audience expansion
+- ✅ **Anomaly detection** flagging underperforming placements and creatives for quick optimization
+- ✅ **Executive dashboard** providing stakeholder-ready summaries for board reviews
+
+---
+
+## 🎓 Key Learnings & Techniques
+
+✅ **Data Modeling** – Star schema design for dimensional analysis  
+✅ **DAX Optimization** – Efficient measure calculation and context handling  
+✅ **API Integration** – Connecting to Meta Business Suite for real-time data  
+✅ **Advanced Visualizations** – KPI cards, combo charts, tree maps, and heatmaps  
+✅ **Drill-Through Navigation** – Multi-level dashboard interactivity  
+✅ **Time Intelligence** – YTD, MTD, and period-over-period comparisons  
+
+---
+
+## 📝 Getting Started
+
+### Prerequisites
+- Microsoft Power BI Desktop (latest version)
+- Meta Business Suite account with ad account access
+- CSV export from Meta Ads Manager or API credentials
+
+### Installation
+1. Clone this repository: `git clone https://github.com/abhaybhatt25/Meta-Paid-Marketing-Campaign-Analysis-using-Power-BI.git`
+2. Open the `.pbix` file in Power BI Desktop
+3. Update data source connections with your Meta Ads data
+4. Refresh and publish to Power BI Service
+
+---
+
+## 🔗 Connect & Explore
+
+- **GitHub Portfolio:** [abhaybhatt25](https://github.com/abhaybhatt25)
+- **LinkedIn:** [Abhay Bhatt – Business Analyst](https://linkedin.com/in/abhay-bhatt-business-analyst/)
+- **Email:** abhaybhatt25@outlook.com
+
+---
+
+## 📄 Documentation
+
+For detailed documentation on data dictionary, DAX measures, and troubleshooting, refer to:
+- `/docs/data_dictionary.md` – Field descriptions and data sources
+- `/docs/dax_measures.md` – Complete DAX formula library
+- `/docs/user_guide.md` – Step-by-step usage guide
+
+---
+
+## 📜 License
+
+This project is open source and available for educational and portfolio purposes. Feel free to fork, modify, and use as reference for your own analytics projects.
+
+---
+
+## ⭐ If You Found This Useful
+
+Please consider:
+- ⭐ **Starring the repository** to show support
+- 🔄 **Forking and customizing** for your own use cases
+- 💬 **Contributing** with improvements or feature suggestions
+- 🤝 **Sharing** with your analytics and marketing teams
+
+---
+
+**Last Updated:** December 2025  
+**Status:** Active & Maintained  
+**Complexity Level:** Intermediate to Advanced
+
+#PowerBI #DataAnalytics #MetaAds #BusinessIntelligence #DAX #MarketingAnalytics #ROAS #DataVisualization #Analytics
