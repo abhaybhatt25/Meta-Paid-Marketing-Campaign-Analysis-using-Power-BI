@@ -163,12 +163,12 @@ Please consider:
 
 ### Instagram Dashboard
 
-![Instagram Dashboard](Instagram Final Dashboard.png)
+![Instagram Dashboard](Instagram%20Final%20Dashboard.png)
 
 ---
 ### Facebook Dashboard
 
-![Facebook Dashboard](Facebook Final Dashboard.png)
+![Facebook Dashboard](Facebook%20Final%20Dashboard.png)
 
 ---
 
