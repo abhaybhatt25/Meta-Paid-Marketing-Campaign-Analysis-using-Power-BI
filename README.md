@@ -35,7 +35,7 @@ End-to-end **interactive Power BI dashboard** analyzing Meta (Facebook/Instagram
 |-----------|-------------|
 | **BI Tool** | Microsoft Power BI Desktop |
 | **Data Transformation** | Power Query (M Language), DAX (Data Analysis Expressions) |
-| **Data Sources** | Meta Business Suite API, Excel/CSV exports |
+| **Data Sources** | Excel/CSV exports |
 | **Database** | SQL Server (optional for data warehousing) |
 | **Version Control** | Git/GitHub |
 | **DAX Functions** | CALCULATE, FILTER, SUMX, DIVIDE, TIME INTELLIGENCE |
@@ -76,60 +76,6 @@ Temporal performance patterns:
 - Custom date range comparisons
 - Spend vs. conversion trend lines
 
-### 5️⃣ ROI Optimization
-Cost efficiency and budget allocation:
-- ROAS by campaign, audience, and placement
-- CAC (Cost Per Acquisition) analysis with benchmarking
-- Budget allocation recommendations
-- Top performers vs. bottom performers
-- Cost per result by campaign objective
-
----
-
-## 📊 DAX Measures & Formulas
-
-### Core Metrics
-```dax
--- ROAS (Return on Ad Spend)
-ROAS = DIVIDE([Total_Revenue], [Total_AdSpend], 0)
-
--- CAC (Cost Per Acquisition)
-CAC = DIVIDE([Total_AdSpend], [Total_Conversions], 0)
-
--- CTR (Click-Through Rate)
-CTR = DIVIDE([Total_Clicks], [Total_Impressions], 0)
-
--- CPC (Cost Per Click)
-CPC = DIVIDE([Total_AdSpend], [Total_Clicks], 0)
-
--- Conversion Rate
-ConversionRate = DIVIDE([Total_Conversions], [Total_Clicks], 0)
-
--- YoY Growth
-YoYGrowth = DIVIDE(
-    [Current_Year_Metric] - [Prior_Year_Metric],
-    [Prior_Year_Metric],
-    0
-)
-```
-
-### Time Intelligence
-```dax
--- MTD (Month-to-Date) Spend
-MTD_Spend = CALCULATE(
-    [Total_AdSpend],
-    DATESMTD(Calendar[Date])
-)
-
--- Previous Month Comparison
-Prior_Month_Spend = CALCULATE(
-    [Total_AdSpend],
-    DATEADD(DATESMTD(Calendar[Date]), -1, MONTH)
-)
-```
-
----
-
 ## 🚀 How to Use
 
 1. **Connect Data Source**
@@ -158,8 +104,7 @@ Prior_Month_Spend = CALCULATE(
 ## 📈 Business Impact
 
 **Results Delivered:**
-- ✅ **Real-time visibility** into campaign performance, reducing reporting time from manual updates to instant refresh
-- ✅ **ROAS tracking** enabling data-driven budget reallocation across campaigns
+
 - ✅ **Audience insights** identifying highest-performing segments for audience expansion
 - ✅ **Anomaly detection** flagging underperforming placements and creatives for quick optimization
 - ✅ **Executive dashboard** providing stakeholder-ready summaries for board reviews
@@ -170,7 +115,6 @@ Prior_Month_Spend = CALCULATE(
 
 ✅ **Data Modeling** – Star schema design for dimensional analysis  
 ✅ **DAX Optimization** – Efficient measure calculation and context handling  
-✅ **API Integration** – Connecting to Meta Business Suite for real-time data  
 ✅ **Advanced Visualizations** – KPI cards, combo charts, tree maps, and heatmaps  
 ✅ **Drill-Through Navigation** – Multi-level dashboard interactivity  
 ✅ **Time Intelligence** – YTD, MTD, and period-over-period comparisons  
@@ -181,7 +125,6 @@ Prior_Month_Spend = CALCULATE(
 
 ### Prerequisites
 - Microsoft Power BI Desktop (latest version)
-- Meta Business Suite account with ad account access
 - CSV export from Meta Ads Manager or API credentials
 
 ### Installation
@@ -197,16 +140,7 @@ Prior_Month_Spend = CALCULATE(
 - **GitHub Portfolio:** [abhaybhatt25](https://github.com/abhaybhatt25)
 - **LinkedIn:** [Abhay Bhatt – Business Analyst](https://linkedin.com/in/abhay-bhatt-business-analyst/)
 - **Email:** abhaybhatt25@outlook.com
-
----
-
-## 📄 Documentation
-
-For detailed documentation on data dictionary, DAX measures, and troubleshooting, refer to:
-- `/docs/data_dictionary.md` – Field descriptions and data sources
-- `/docs/dax_measures.md` – Complete DAX formula library
-- `/docs/user_guide.md` – Step-by-step usage guide
-
+  
 ---
 
 ## 📜 License
@@ -227,32 +161,14 @@ Please consider:
 
 ## 💪 Dashboard Screenshots
 
-### Meta Ad Performance Dashboard - Executive Summary
-Interactive Power BI dashboard showing comprehensive Meta advertising performance metrics:
-- **KPI Cards:** Real-time metrics (Impressions: 123.8K, Clicks: 14.7K, Shares: 682, Comments: 1.5K, Purchases: 708, Engagements: 16.8K)
-- **Engagement Rates:** CTR 11.86%, Engagement Rate 13.60%, Conversion Rate 4.82%, Purchase Rate 0.57%
-- **Budget Analysis:** Average Budget $50.7K per campaign, Total Budget $2.5M
-- **Demographic Insights:** Shares by Gender (pie chart), Shares by Age (distribution), Geographic breakdown
-- **Trend Analysis:** Weekly Shares Trend (stacked bar chart), Hourly Shares Trend (line chart)
-- **Performance Matrix:** Analysis by Ad Type (Carousel, Stories, Image, Video) with JMPR, CLKS, CTR, PR, ER, CR metrics
-- **Placement Analysis:** Day-by-day analysis calendar heatmap and country-level geographic visualization
-- **Meta Platform Selector:** Dynamic dropdowns for platform selection (Facebook/Instagram), campaign filtering, and target interest segmentation
+### Instagram Dashboard
 
-![Meta Ad Performance Dashboard - Executive Summary](./assets/meta_dashboard_executive.png)
+![Instagram Dashboard](Instagram Final Dashboard.png)
 
 ---
+### Facebook Dashboard
 
-### Meta Ad Performance Dashboard - Advanced Analytics
-Second view showing alternative KPI layout and additional performance dimensions:
-- **Updated KPI Distribution:** Impressions: 216.0K, Clicks: 25.4K, Shares: 1.3K, Comments: 2.6K, Purchases: 1.3K, Engagements: 29.3K
-- **Refined Engagement Metrics:** CTR 11.76%, Engagement Rate 13.56%, Conversion Rate 5.21%, Purchase Rate 0.61%
-- **Consistent Budget Tracking:** $50.7K average per campaign, $2.5M total budget
-- **Enriched Demographic Analysis:** Updated gender and age distribution patterns
-- **Enhanced Weekly & Hourly Trends:** Refined trend visualizations showing performance consistency
-- **Ad Type Performance Matrix:** Stories (23.8K JMPR, 2.7K CLKS, 11.35% CTR), Image (16.8K, 1.9K, 11.23%), Carousel (15.9K, 1.8K, 11.08%), Video (15.1K, 1.8K, 11.78%)
-- **Advanced Filtering:** Multi-select dropdowns for dynamic measure selection, campaign filtering, and target interest segmentation
-
-![Meta Ad Performance Dashboard - Advanced Analytics](./assets/meta_dashboard_analytics.png)
+![Facebook Dashboard](Facebook Final Dashboard.png)
 
 ---
 
